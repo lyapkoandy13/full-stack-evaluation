@@ -1,9 +1,7 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 
-interface HomePageProps {}
-
-export default function HomePage(props: HomePageProps) {
+export default function HomePage() {
   return (
     <Layout>
       <div></div>
