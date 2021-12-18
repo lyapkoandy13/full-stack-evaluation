@@ -10,7 +10,6 @@ import useChartData from "../hooks/useChartData";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    //
     pageName: {
       fontSize: 32,
       color: theme.palette.primary.main,
@@ -29,7 +28,10 @@ const useStyles = makeStyles((theme: Theme) =>
       gap: "1rem",
       gridTemplateColumns: "1fr",
       gridTemplateRows: "repeat(2, 1fr) 2fr",
-      aspectRatio: "10/25",
+      aspectRatio: "23/60",
+      [theme.breakpoints.up("sm")]: {
+        aspectRatio: "23/40",
+      },
       [theme.breakpoints.up("lgplus")]: {
         gridTemplateColumns: "repeat(2, minmax(300px, 1fr))",
         gridTemplateRows: "1fr 1fr",

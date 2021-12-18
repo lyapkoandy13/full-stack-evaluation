@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("md")]: { width: 0 },
     },
     openButton: {
-      top: 26,
+      top: 11,
       left: 4,
       padding: "10px",
       position: "fixed",
