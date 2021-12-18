@@ -7,7 +7,7 @@ import decodeRoute from "./routes/decode.route";
 import notFoundMiddleware from "./middleware/notFound.middleware";
 import errorMiddleware from "./middleware/error.middleware";
 
-const PORT = parseInt(process.env.PORT || "3000"); // Windows has a problem running on string port
+const PORT = parseInt(process.env.PORT || "5000"); // Windows has a problem running on string port
 const HOST = process.env.HOST || "localhost";
 
 const app = express();
