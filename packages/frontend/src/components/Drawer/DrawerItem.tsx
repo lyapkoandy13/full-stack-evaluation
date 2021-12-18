@@ -2,6 +2,7 @@ import React from "react";
 import { ListItem, ListItemIcon, ListItemText, Theme } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 import clsx from "clsx";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,15 +24,25 @@ const useStyles = makeStyles((theme: Theme) =>
 export interface DrawerItemProps {
   text: string;
   icon: React.ReactNode;
-  active?: boolean;
+  path: string;
 }
-export default function DrawerItem({ text, icon, active }: DrawerItemProps) {
+export default function DrawerItem({ text, icon, path }: DrawerItemProps) {
   const classes = useStyles();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const active = React.useMemo(
+    () => location.pathname === path,
+    [location.pathname, path]
+  );
+  const gotoPage = () => !active && navigate(path);
+
   return (
     <ListItem
       className={clsx(classes.root, active && classes.rootActive)}
       button
       key={text}
+      onClick={gotoPage}
     >
       <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
       <ListItemText primary={text} />

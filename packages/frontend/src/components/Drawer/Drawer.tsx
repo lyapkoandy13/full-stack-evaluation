@@ -13,17 +13,19 @@ import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import CloseIcon from "@material-ui/icons/Close";
 
 import DrawerItem, { DrawerItemProps } from "./DrawerItem";
+import { DashboardRoute, HomeRoute } from "../../routes";
 
 const DRAWER_WIDTH = 280;
 const DRAWER_ITEMS: DrawerItemProps[] = [
   {
     text: "Home",
     icon: <HomeRoundedIcon />,
+    path: HomeRoute.path,
   },
   {
     text: "My Dashboard",
     icon: <DashboardRoundedIcon />,
-    active: true,
+    path: DashboardRoute.path,
   },
 ];
 
@@ -109,7 +111,7 @@ export default function Drawer({ mobile }: DrawerProps) {
               key={i}
               text={item.text}
               icon={item.icon}
-              active={item.active}
+              path={item.path}
             />
           ))}
         </List>

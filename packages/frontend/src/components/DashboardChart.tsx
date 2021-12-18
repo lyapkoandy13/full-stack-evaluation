@@ -81,7 +81,8 @@ export default function DashboardChart({
     dateAxis.renderer.grid.template.strokeOpacity = 0;
     dateAxis.cursorTooltipEnabled = false;
     dateAxis.dateFormats.setKey("month", "MMM yyyy");
-    dateAxis.gridIntervals.setAll([{ timeUnit: "month", count: 1 }]);
+    // dateAxis.gridIntervals.setAll([{ timeUnit: "month", count: 1 }]);
+    dateAxis.renderer.minGridDistance = 36;
     dateAxis.renderer.labels.template.fill = am4core.color(
       theme.palette.dashboardGrey.main
     );
